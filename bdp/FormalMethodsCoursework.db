@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<db_xml>
+    <atelierb version="3_7_ubuntu-cvs" />
+    <project decomp_dir="E:\Formal methods\workspace\FormalMethodsCoursework\bdp\expand_src" old_decomp_dir="E:\Formal methods\workspace\FormalMethodsCoursework\bdp\src">
+        <!-- Definition directory list -->
+        <!-- Proof mechanisms -->
+        <!-- Component file list -->
+        <component_file path="E:/Formal methods/workspace/FormalMethodsCoursework" name="Maze" suffix="mch" user="User">
+            <component name="Maze" type="specification" />
+        </component_file>
+        <component_file path="E:/Formal methods/workspace/FormalMethodsCoursework" name="Robot" suffix="mch" user="User">
+            <component name="Robot" type="specification" />
+        </component_file>
+    </project>
+</db_xml>
