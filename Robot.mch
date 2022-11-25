@@ -50,7 +50,8 @@ DEFINITIONS
     ANIMATION_IMG1 == "images/wall.gif";
     ANIMATION_IMG2 == "images/robot.gif";
     
-    strikes_boundry(x, y) == (x /: xRegion or y /: yRegion)
+    strikes_boundry(x, y) == (x /: xRegion or y /: yRegion);
+    hits_wall(x, y) == (y : ran({x} <| wall))
     
 OPERATIONS
     
@@ -62,8 +63,67 @@ OPERATIONS
         THEN
             alert := Exceeding_Boundry
         ELSE
-            yRobot := yRobot + 1
-            || alert := Moved_North
+            IF (hits_wall(xRobot, yRobot + 1))
+            THEN
+                alert := Internal_Wall
+            ELSE
+                yRobot := yRobot + 1
+                || alert := Moved_North
+            END
+        END
+    END;
+    
+    alert <--  MoveSouth =
+    PRE
+        1 /= 0
+    THEN
+        IF (strikes_boundry(xRobot, yRobot - 1))
+        THEN
+            alert := Exceeding_Boundry
+        ELSE
+            IF (hits_wall(xRobot, yRobot - 1))
+            THEN
+                alert := Internal_Wall
+            ELSE
+                yRobot := yRobot - 1
+                || alert := Moved_South
+            END
+        END
+    END;
+    
+    alert <--  MoveEast =
+    PRE
+        1 /= 0
+    THEN
+        IF (strikes_boundry(xRobot + 1, yRobot))
+        THEN
+            alert := Exceeding_Boundry
+        ELSE
+            IF (hits_wall(xRobot + 1, yRobot))
+            THEN
+                alert := Internal_Wall
+            ELSE
+                xRobot := xRobot + 1
+                || alert := Moved_East
+            END
+        END
+    END;
+    
+    alert <--  MoveWest =
+    PRE
+        1 /= 0
+    THEN
+        IF (strikes_boundry(xRobot - 1, yRobot))
+        THEN
+            alert := Exceeding_Boundry
+        ELSE
+            IF (hits_wall(xRobot - 1, yRobot))
+            THEN
+                alert := Internal_Wall
+            ELSE
+                xRobot := xRobot - 1
+                || alert := Moved_East
+            END
         END
     END
 END
