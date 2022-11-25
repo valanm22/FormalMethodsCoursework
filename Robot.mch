@@ -125,5 +125,25 @@ OPERATIONS
                 || alert := Moved_East
             END
         END
+    END;
+    
+    alert <--  Teleport(xTeleport, yTeleport) =
+    PRE
+        xTeleport : NATURAL1 &
+        yTeleport : NATURAL1
+    THEN
+        IF (strikes_boundry(xTeleport, yTeleport))
+        THEN
+            alert := Exceeding_Boundry
+        ELSE
+            IF (hits_wall(xTeleport, yTeleport))
+            THEN
+                alert := Internal_Wall
+            ELSE
+                xRobot := xTeleport
+                || yRobot := yTeleport
+                || alert := Moved_East
+            END
+        END
     END
 END
