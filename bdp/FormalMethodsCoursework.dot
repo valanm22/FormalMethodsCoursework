@@ -2,4 +2,5 @@ digraph {
 Maze [ label=" Maze " shape= box ]
 Robot [ label=" Robot " shape= box ]
 
+"Robot" -> "Maze" [style= dotted ]
 }
