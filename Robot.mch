@@ -51,7 +51,8 @@ DEFINITIONS
     ANIMATION_IMG2 == "images/robot.gif";
     
     strikes_boundry(x, y) == (x /: xRegion or y /: yRegion);
-    hits_wall(x, y) == (y : ran({x} <| wall))
+    hits_wall(x, y) == (y : ran({x} <| wall));
+    is_exit(x, y) == ((x |-> y) = exit)
     
 OPERATIONS
     
@@ -122,7 +123,7 @@ OPERATIONS
                 alert := Internal_Wall
             ELSE
                 xRobot := xRobot - 1
-                || alert := Moved_East
+                || alert := Moved_West
             END
         END
     END;
@@ -142,7 +143,7 @@ OPERATIONS
             ELSE
                 xRobot := xTeleport
                 || yRobot := yTeleport
-                || alert := Moved_East
+                || alert := Teleported
             END
         END
     END
