@@ -34,17 +34,20 @@ PROPERTIES
 VARIABLES
     xRobot,
     yRobot,
-    status
+    status,
+    visitedRegions
     
 INVARIANT
     xRobot : NATURAL1 & xRobot : xRegion &
     yRobot : NATURAL1 & yRobot : yRegion &
-    status : STATUS
+    status : STATUS &
+    visitedRegions : seq(maze)
     
 INITIALISATION
     xRobot := prj1(xRegion, yRegion) (entrance) ||
     yRobot := prj2(xRegion, yRegion) (entrance) ||
-    status := no
+    status := no ||
+    visitedRegions := [entrance]
     
 DEFINITIONS
     ANIMATION_FUNCTION == ({ row, col, img | col:xRegion & 
@@ -78,6 +81,7 @@ OPERATIONS
             ELSE
                 yRobot := yRobot + 1
                 || alert := Moved_North 
+                || visitedRegions := (visitedRegions <- (xRobot |-> yRobot + 1))
                 || IF (is_exit(xRobot, yRobot + 1))
                 THEN
                     status:= yes
@@ -102,6 +106,7 @@ OPERATIONS
             ELSE
                 yRobot := yRobot - 1
                 || alert := Moved_South
+                || visitedRegions := (visitedRegions <- (xRobot |-> yRobot - 1))
                 || IF (is_exit(xRobot, yRobot - 1))
                 THEN
                     status:= yes
@@ -126,6 +131,7 @@ OPERATIONS
             ELSE
                 xRobot := xRobot + 1
                 || alert := Moved_East
+                || visitedRegions := (visitedRegions <- (xRobot + 1 |-> yRobot))
                 || IF (is_exit(xRobot + 1, yRobot))
                 THEN
                     status:= yes
@@ -150,6 +156,7 @@ OPERATIONS
             ELSE
                 xRobot := xRobot - 1
                 || alert := Moved_West
+                || visitedRegions := (visitedRegions <- (xRobot - 1 |-> yRobot))
                 || IF (is_exit(xRobot - 1, yRobot))
                 THEN
                     status:= yes
@@ -177,6 +184,7 @@ OPERATIONS
                 xRobot := xTeleport
                 || yRobot := yTeleport
                 || alert := Teleported
+                || visitedRegions := (visitedRegions <- (xTeleport |-> yTeleport))
                 || IF (is_exit(xTeleport, yTeleport))
                 THEN
                     status:= yes
@@ -195,6 +203,11 @@ OPERATIONS
     alert <-- foundExit =  
     BEGIN
         alert := status
+    END;
+    
+    route <-- robotsRoute = 
+    BEGIN
+        route := visitedRegions
     END
     
 END
