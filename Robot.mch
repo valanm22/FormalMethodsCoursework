@@ -19,8 +19,8 @@ SETS
     };
     
     STATUS = {
-        Reached_Exit,
-        Not_Reached_Exit
+        no,
+        yes
     }
     
 CONSTANTS       
@@ -44,7 +44,7 @@ INVARIANT
 INITIALISATION
     xRobot := prj1(xRegion, yRegion) (entrance) ||
     yRobot := prj2(xRegion, yRegion) (entrance) ||
-    status := Not_Reached_Exit
+    status := no
     
 DEFINITIONS
     ANIMATION_FUNCTION == ({ row, col, img | col:xRegion & 
@@ -66,7 +66,7 @@ OPERATIONS
     
     alert <--  MoveNorth =
     PRE
-        status /= Reached_Exit
+        status /= yes
     THEN
         IF (strikes_boundry(xRobot, yRobot + 1))
         THEN
@@ -80,9 +80,9 @@ OPERATIONS
                 || alert := Moved_North 
                 || IF (is_exit(xRobot, yRobot + 1))
                 THEN
-                    status:= Reached_Exit
+                    status:= yes
                 ELSE
-                    status := Not_Reached_Exit
+                    status := no
                 END
             END
         END
@@ -90,7 +90,7 @@ OPERATIONS
     
     alert <--  MoveSouth =
     PRE
-        status /= Reached_Exit
+        status /= yes
     THEN
         IF (strikes_boundry(xRobot, yRobot - 1))
         THEN
@@ -104,9 +104,9 @@ OPERATIONS
                 || alert := Moved_South
                 || IF (is_exit(xRobot, yRobot - 1))
                 THEN
-                    status:= Reached_Exit
+                    status:= yes
                 ELSE
-                    status := Not_Reached_Exit
+                    status := no
                 END
             END
         END
@@ -114,7 +114,7 @@ OPERATIONS
     
     alert <--  MoveEast =
     PRE
-        status /= Reached_Exit
+        status /= yes
     THEN
         IF (strikes_boundry(xRobot + 1, yRobot))
         THEN
@@ -128,9 +128,9 @@ OPERATIONS
                 || alert := Moved_East
                 || IF (is_exit(xRobot + 1, yRobot))
                 THEN
-                    status:= Reached_Exit
+                    status:= yes
                 ELSE
-                    status := Not_Reached_Exit
+                    status := no
                 END
             END
         END
@@ -138,7 +138,7 @@ OPERATIONS
     
     alert <--  MoveWest =
     PRE
-        status /= Reached_Exit
+        status /= yes
     THEN
         IF (strikes_boundry(xRobot - 1, yRobot))
         THEN
@@ -152,9 +152,9 @@ OPERATIONS
                 || alert := Moved_West
                 || IF (is_exit(xRobot - 1, yRobot))
                 THEN
-                    status:= Reached_Exit
+                    status:= yes
                 ELSE
-                    status := Not_Reached_Exit
+                    status := no
                 END
             END
         END
@@ -164,7 +164,7 @@ OPERATIONS
     PRE
         xTeleport : NATURAL1 &
         yTeleport : NATURAL1 &
-        status /= Reached_Exit
+        status /= yes
     THEN
         IF (strikes_boundry(xTeleport, yTeleport))
         THEN
@@ -179,11 +179,17 @@ OPERATIONS
                 || alert := Teleported
                 || IF (is_exit(xTeleport, yTeleport))
                 THEN
-                    status:= Reached_Exit
+                    status:= yes
                 ELSE
-                    status := Not_Reached_Exit
+                    status := no
                 END
             END
         END
+    END;
+    
+    alert <-- foundExit =  
+    BEGIN
+        alert := status
     END
+    
 END
