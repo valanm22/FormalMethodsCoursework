@@ -187,6 +187,11 @@ OPERATIONS
         END
     END;
     
+    location <-- getPosition = 
+    BEGIN
+        location := (xRobot |-> yRobot)
+    END;
+    
     alert <-- foundExit =  
     BEGIN
         alert := status
