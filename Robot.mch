@@ -208,6 +208,14 @@ OPERATIONS
     route <-- robotsRoute = 
     BEGIN
         route := visitedRegions
+    END;
+    
+    reinitialise =
+    BEGIN
+        xRobot := prj1(xRegion, yRegion) (entrance) ||
+        yRobot := prj2(xRegion, yRegion) (entrance) ||
+        status := no ||
+        visitedRegions := [entrance] 
     END
     
 END
