@@ -21,6 +21,11 @@ SETS
     STATUS = {
         no,
         yes
+    };
+    
+    SQUARE = {
+        Visited,
+        Not_Visited
     }
     
 CONSTANTS       
@@ -35,19 +40,22 @@ VARIABLES
     xRobot,
     yRobot,
     status,
-    visitedRegions
+    visitedRegions,
+    visitedSquares
     
 INVARIANT
     xRobot : NATURAL1 & xRobot : xRegion &
     yRobot : NATURAL1 & yRobot : yRegion &
     status : STATUS &
-    visitedRegions : seq(maze)
+    visitedRegions : seq(maze) &
+    visitedSquares : POW(NAT1 * NAT1)
     
 INITIALISATION
     xRobot := prj1(xRegion, yRegion) (entrance) ||
     yRobot := prj2(xRegion, yRegion) (entrance) ||
     status := no ||
-    visitedRegions := [entrance]
+    visitedRegions := [entrance] ||
+    visitedSquares := {}
     
 DEFINITIONS
     ANIMATION_FUNCTION == ({ row, col, img | col:xRegion & 
@@ -82,6 +90,7 @@ OPERATIONS
                 yRobot := yRobot + 1
                 || alert := Moved_North 
                 || visitedRegions := (visitedRegions <- (xRobot |-> yRobot + 1))
+                || visitedSquares := visitedSquares \/ {(xRobot |-> yRobot)}
                 || IF (is_exit(xRobot, yRobot + 1))
                 THEN
                     status:= yes
@@ -107,6 +116,7 @@ OPERATIONS
                 yRobot := yRobot - 1
                 || alert := Moved_South
                 || visitedRegions := (visitedRegions <- (xRobot |-> yRobot - 1))
+                || visitedSquares := visitedSquares \/ {(xRobot |-> yRobot)}
                 || IF (is_exit(xRobot, yRobot - 1))
                 THEN
                     status:= yes
@@ -132,6 +142,7 @@ OPERATIONS
                 xRobot := xRobot + 1
                 || alert := Moved_East
                 || visitedRegions := (visitedRegions <- (xRobot + 1 |-> yRobot))
+                || visitedSquares := visitedSquares \/ {(xRobot |-> yRobot)}
                 || IF (is_exit(xRobot + 1, yRobot))
                 THEN
                     status:= yes
@@ -157,6 +168,7 @@ OPERATIONS
                 xRobot := xRobot - 1
                 || alert := Moved_West
                 || visitedRegions := (visitedRegions <- (xRobot - 1 |-> yRobot))
+                || visitedSquares := visitedSquares \/ {(xRobot |-> yRobot)}
                 || IF (is_exit(xRobot - 1, yRobot))
                 THEN
                     status:= yes
@@ -185,6 +197,7 @@ OPERATIONS
                 || yRobot := yTeleport
                 || alert := Teleported
                 || visitedRegions := (visitedRegions <- (xTeleport |-> yTeleport))
+                || visitedSquares := visitedSquares \/ {(xRobot |-> yRobot)}
                 || IF (is_exit(xTeleport, yTeleport))
                 THEN
                     status:= yes
@@ -205,6 +218,19 @@ OPERATIONS
         alert := status
     END;
     
+    square <-- hasVisitedSquare(xVisit, yVisit) =  
+    PRE
+        xVisit : NATURAL1 &
+        yVisit : NATURAL1
+    THEN
+        IF ((xVisit |-> yVisit) : visitedSquares)
+        THEN
+            square := Visited
+        ELSE
+            square := Not_Visited
+        END
+    END;
+    
     route <-- robotsRoute = 
     BEGIN
         route := visitedRegions
@@ -215,7 +241,8 @@ OPERATIONS
         xRobot := prj1(xRegion, yRegion) (entrance) ||
         yRobot := prj2(xRegion, yRegion) (entrance) ||
         status := no ||
-        visitedRegions := [entrance] 
+        visitedRegions := [entrance] ||
+        visitedSquares := {}
     END
     
 END
