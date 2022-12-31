@@ -15,12 +15,13 @@ SETS
         Moved_South, 
         Moved_East, 
         Moved_West,
-        Teleported
+        Teleported,
+        Not_A_Path_Square
     };
     
     STATUS = {
-        no,
-        yes
+        No,
+        Yes
     };
     
     SQUARE = {
@@ -53,7 +54,7 @@ INVARIANT
 INITIALISATION
     xRobot := prj1(xRegion, yRegion) (entrance) ||
     yRobot := prj2(xRegion, yRegion) (entrance) ||
-    status := no ||
+    status := No ||
     visitedRegions := [entrance] ||
     visitedSquares := {}
     
@@ -77,7 +78,7 @@ OPERATIONS
     
     alert <--  MoveNorth =
     PRE
-        status /= yes
+        status /= Yes
     THEN
         IF (strikes_boundry(xRobot, yRobot + 1))
         THEN
@@ -93,9 +94,9 @@ OPERATIONS
                 || visitedSquares := visitedSquares \/ {(xRobot |-> yRobot)}
                 || IF (is_exit(xRobot, yRobot + 1))
                 THEN
-                    status:= yes
+                    status:= Yes
                 ELSE
-                    status := no
+                    status := No
                 END
             END
         END
@@ -103,7 +104,7 @@ OPERATIONS
     
     alert <--  MoveSouth =
     PRE
-        status /= yes
+        status /= Yes
     THEN
         IF (strikes_boundry(xRobot, yRobot - 1))
         THEN
@@ -119,9 +120,9 @@ OPERATIONS
                 || visitedSquares := visitedSquares \/ {(xRobot |-> yRobot)}
                 || IF (is_exit(xRobot, yRobot - 1))
                 THEN
-                    status:= yes
+                    status:= Yes
                 ELSE
-                    status := no
+                    status := No
                 END
             END
         END
@@ -129,7 +130,7 @@ OPERATIONS
     
     alert <--  MoveEast =
     PRE
-        status /= yes
+        status /= Yes
     THEN
         IF (strikes_boundry(xRobot + 1, yRobot))
         THEN
@@ -145,9 +146,9 @@ OPERATIONS
                 || visitedSquares := visitedSquares \/ {(xRobot |-> yRobot)}
                 || IF (is_exit(xRobot + 1, yRobot))
                 THEN
-                    status:= yes
+                    status:= Yes
                 ELSE
-                    status := no
+                    status := No
                 END
             END
         END
@@ -155,7 +156,7 @@ OPERATIONS
     
     alert <--  MoveWest =
     PRE
-        status /= yes
+        status /= Yes
     THEN
         IF (strikes_boundry(xRobot - 1, yRobot))
         THEN
@@ -171,9 +172,9 @@ OPERATIONS
                 || visitedSquares := visitedSquares \/ {(xRobot |-> yRobot)}
                 || IF (is_exit(xRobot - 1, yRobot))
                 THEN
-                    status:= yes
+                    status:= Yes
                 ELSE
-                    status := no
+                    status := No
                 END
             END
         END
@@ -183,7 +184,7 @@ OPERATIONS
     PRE
         xTeleport : NATURAL1 &
         yTeleport : NATURAL1 &
-        status /= yes
+        status /= Yes
     THEN
         IF (strikes_boundry(xTeleport, yTeleport))
         THEN
@@ -193,17 +194,22 @@ OPERATIONS
             THEN
                 alert := Internal_Wall
             ELSE
-                xRobot := xTeleport
-                || yRobot := yTeleport
-                || alert := Teleported
-                || visitedRegions := (visitedRegions <- (xTeleport |-> yTeleport))
-                || visitedSquares := visitedSquares \/ {(xRobot |-> yRobot)}
-                || IF (is_exit(xTeleport, yTeleport))
+                IF (xTeleport |-> yTeleport) = (1,5)
                 THEN
-                    status:= yes
-                ELSE
-                    status := no
-                END
+                    alert := Not_A_Path_Square
+                ELSE   
+                    xRobot := xTeleport
+                    || yRobot := yTeleport
+                    || alert := Teleported
+                    || visitedRegions := (visitedRegions <- (xTeleport |-> yTeleport))
+                    || visitedSquares := visitedSquares \/ {(xRobot |-> yRobot)}
+                    || IF (is_exit(xTeleport, yTeleport))
+                    THEN
+                        status:= Yes
+                    ELSE
+                        status := No
+                    END
+                END                    
             END
         END
     END;
@@ -240,7 +246,7 @@ OPERATIONS
     BEGIN
         xRobot := prj1(xRegion, yRegion) (entrance) ||
         yRobot := prj2(xRegion, yRegion) (entrance) ||
-        status := no ||
+        status := No ||
         visitedRegions := [entrance] ||
         visitedSquares := {}
     END
