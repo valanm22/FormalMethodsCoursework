@@ -49,7 +49,7 @@ INVARIANT
     yRobot : NATURAL1 & yRobot : yRegion &
     status : STATUS &
     visitedRegions : seq(maze) &
-    visitedSquares : POW(NAT1 * NAT1)
+    visitedSquares : POW(maze)
     
 INITIALISATION
     xRobot := prj1(xRegion, yRegion) (entrance) ||
