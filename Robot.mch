@@ -15,8 +15,7 @@ SETS
         Moved_South, 
         Moved_East, 
         Moved_West,
-        Teleported,
-        Not_A_Path_Square
+        Teleported
     };
     
     STATUS = {
@@ -193,24 +192,19 @@ OPERATIONS
             IF (hits_wall(xTeleport, yTeleport))
             THEN
                 alert := Internal_Wall
-            ELSE
-                IF (xTeleport |-> yTeleport) = (1,5)
+            ELSE   
+                xRobot := xTeleport
+                || yRobot := yTeleport
+                || alert := Teleported
+                || visitedRegions := (visitedRegions <- (xTeleport |-> yTeleport))
+                || visitedSquares := visitedSquares \/ {(xRobot |-> yRobot)}
+                || IF (is_exit(xTeleport, yTeleport))
                 THEN
-                    alert := Not_A_Path_Square
-                ELSE   
-                    xRobot := xTeleport
-                    || yRobot := yTeleport
-                    || alert := Teleported
-                    || visitedRegions := (visitedRegions <- (xTeleport |-> yTeleport))
-                    || visitedSquares := visitedSquares \/ {(xRobot |-> yRobot)}
-                    || IF (is_exit(xTeleport, yTeleport))
-                    THEN
-                        status:= Yes
-                    ELSE
-                        status := No
-                    END
-                END                    
-            END
+                    status:= Yes
+                ELSE
+                    status := No
+                END
+            END                    
         END
     END;
     
