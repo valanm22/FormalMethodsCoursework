@@ -4,43 +4,31 @@ graph [nodesep=1.5, ranksep=1.5];
 
 1 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedSquares = \{\},\nxRobot = 1,yRobot = 1"];
 
-2 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="repeated (2)\nstatus = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedSquares(1) = 1,xRobot = 1,yRobot = 2"];
+2 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedSquares(1) = 1,xRobot = 1,yRobot = 2"];
 
-3 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="repeated (3)\nstatus = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedSquares = \{(1\|-\>1),(1\|-\>2)\},xRobot = 1,\nyRobot = 1"];
+4 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (2\|-\>2),visitedSquares = \{(1\|-\>1),(1\|-\>2)\},xRobot = 2,\nyRobot = 2"];
 
-5 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="repeated (2)\nstatus = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedSquares = \{(1\|-\>1),(1\|-\>2)\},\nxRobot = 1,yRobot = 2"];
+5 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (2\|-\>2),visitedRegions(4) = (3\|-\>2),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2)\},\nxRobot = 3,yRobot = 2"];
 
-7 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedSquares = \{(1\|-\>1),(1\|-\>2)\},xRobot = 2,yRobot = 2"];
+7 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (2\|-\>2),visitedRegions(4) = (3\|-\>2),visitedRegions(5) = (3\|-\>1),\nvisitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>2)\},xRobot = 3,yRobot = 1"];
 
-8 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="repeated (2)\nstatus = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2)\},xRobot = 3,\nyRobot = 2"];
+10 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (2\|-\>2),visitedRegions(4) = (3\|-\>2),visitedRegions(5) = (3\|-\>1),\nvisitedRegions(6) = (4\|-\>1),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2)\},xRobot = 4,\nyRobot = 1"];
 
-10 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="repeated (2)\nstatus = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedRegions(7) = (3\|-\>1),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>2)\},\nxRobot = 3,yRobot = 1"];
+11 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (2\|-\>2),visitedRegions(4) = (3\|-\>2),visitedRegions(5) = (3\|-\>1),\nvisitedRegions(6) = (4\|-\>1),visitedRegions(7) = (5\|-\>1),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1)\},\nxRobot = 5,yRobot = 1"];
 
-13 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedRegions(7) = (3\|-\>1),visitedRegions(8) = (4\|-\>1),\nvisitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2)\},xRobot = 4,yRobot = 1"];
+13 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (2\|-\>2),visitedRegions(4) = (3\|-\>2),visitedRegions(5) = (3\|-\>1),\nvisitedRegions(6) = (4\|-\>1),visitedRegions(7) = (5\|-\>1),visitedRegions(8) = (5\|-\>2),\nvisitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>1)\},xRobot = 5,yRobot = 2"];
 
-16 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="repeated (2)\nstatus = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedRegions(7) = (3\|-\>1),visitedRegions(8) = (4\|-\>1),\nvisitedRegions(9) = (5\|-\>2),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1)\},xRobot = 5,\nyRobot = 2"];
+15 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (2\|-\>2),visitedRegions(4) = (3\|-\>2),visitedRegions(5) = (3\|-\>1),\nvisitedRegions(6) = (4\|-\>1),visitedRegions(7) = (5\|-\>1),visitedRegions(8) = (5\|-\>2),\nvisitedRegions(9) = (5\|-\>3),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>1),(5\|-\>2)\},xRobot = 5,\nyRobot = 3"];
 
-17 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedRegions(7) = (3\|-\>1),visitedRegions(8) = (4\|-\>1),\nvisitedRegions(9) = (5\|-\>2),visitedRegions(10) = (5\|-\>3),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>2)\},\nxRobot = 5,yRobot = 3"];
+19 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (2\|-\>2),visitedRegions(4) = (3\|-\>2),visitedRegions(5) = (3\|-\>1),\nvisitedRegions(6) = (4\|-\>1),visitedRegions(7) = (5\|-\>1),visitedRegions(8) = (5\|-\>2),\nvisitedRegions(9) = (5\|-\>3),visitedRegions(10) = (6\|-\>3),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>1),(5\|-\>2),(5\|-\>3)\},\nxRobot = 6,yRobot = 3"];
 
-21 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedRegions(7) = (3\|-\>1),visitedRegions(8) = (4\|-\>1),\nvisitedRegions(9) = (5\|-\>2),visitedRegions(10) = (5\|-\>3),visitedRegions(11) = (6\|-\>3),\nvisitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>2),(5\|-\>3)\},xRobot = 6,yRobot = 3"];
+20 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (2\|-\>2),visitedRegions(4) = (3\|-\>2),visitedRegions(5) = (3\|-\>1),\nvisitedRegions(6) = (4\|-\>1),visitedRegions(7) = (5\|-\>1),visitedRegions(8) = (5\|-\>2),\nvisitedRegions(9) = (5\|-\>3),visitedRegions(10) = (6\|-\>3),visitedRegions(11) = (7\|-\>3),\nvisitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>1),(5\|-\>2),(5\|-\>3),(6\|-\>3)\},xRobot = 7,yRobot = 3"];
 
-22 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="repeated (3)\nstatus = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedRegions(7) = (3\|-\>1),visitedRegions(8) = (4\|-\>1),\nvisitedRegions(9) = (5\|-\>2),visitedRegions(10) = (5\|-\>3),visitedRegions(11) = (6\|-\>3),\nvisitedRegions(12) = (7\|-\>3),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>2),(5\|-\>3),(6\|-\>3)\},xRobot = 7,\nyRobot = 3"];
+23 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (2\|-\>2),visitedRegions(4) = (3\|-\>2),visitedRegions(5) = (3\|-\>1),\nvisitedRegions(6) = (4\|-\>1),visitedRegions(7) = (5\|-\>1),visitedRegions(8) = (5\|-\>2),\nvisitedRegions(9) = (5\|-\>3),visitedRegions(10) = (6\|-\>3),visitedRegions(11) = (7\|-\>3),\nvisitedRegions(12) = (6\|-\>3),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>1),(5\|-\>2),(5\|-\>3),(6\|-\>3),(7\|-\>3)\},xRobot = 6,\nyRobot = 3"];
 
-24 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedRegions(7) = (3\|-\>1),visitedRegions(8) = (4\|-\>1),\nvisitedRegions(9) = (5\|-\>2),visitedRegions(10) = (5\|-\>3),visitedRegions(11) = (6\|-\>3),\nvisitedRegions(12) = (7\|-\>3),visitedRegions(13) = (7\|-\>2),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>2),(5\|-\>3),(6\|-\>3),(7\|-\>3)\},\nxRobot = 7,yRobot = 2"];
+26 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (2\|-\>2),visitedRegions(4) = (3\|-\>2),visitedRegions(5) = (3\|-\>1),\nvisitedRegions(6) = (4\|-\>1),visitedRegions(7) = (5\|-\>1),visitedRegions(8) = (5\|-\>2),\nvisitedRegions(9) = (5\|-\>3),visitedRegions(10) = (6\|-\>3),visitedRegions(11) = (7\|-\>3),\nvisitedRegions(12) = (6\|-\>3),visitedRegions(13) = (1\|-\>4),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>1),(5\|-\>2),(5\|-\>3),(6\|-\>3),(7\|-\>3)\},\nxRobot = 1,yRobot = 4"];
 
-26 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedRegions(7) = (3\|-\>1),visitedRegions(8) = (4\|-\>1),\nvisitedRegions(9) = (5\|-\>2),visitedRegions(10) = (5\|-\>3),visitedRegions(11) = (6\|-\>3),\nvisitedRegions(12) = (7\|-\>3),visitedRegions(13) = (7\|-\>2),visitedRegions(14) = (7\|-\>3),\nvisitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>2),(5\|-\>3),(6\|-\>3),(7\|-\>2),(7\|-\>3)\},xRobot = 7,yRobot = 3"];
-
-29 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedRegions(7) = (3\|-\>1),visitedRegions(8) = (4\|-\>1),\nvisitedRegions(9) = (5\|-\>2),visitedRegions(10) = (5\|-\>3),visitedRegions(11) = (6\|-\>3),\nvisitedRegions(12) = (7\|-\>3),visitedRegions(13) = (7\|-\>2),visitedRegions(14) = (7\|-\>3),\nvisitedRegions(15) = (6\|-\>3),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>2),(5\|-\>3),(6\|-\>3),(7\|-\>2),(7\|-\>3)\},xRobot = 6,\nyRobot = 3"];
-
-31 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedRegions(7) = (3\|-\>1),visitedRegions(8) = (4\|-\>1),\nvisitedRegions(9) = (5\|-\>2),visitedRegions(10) = (5\|-\>3),visitedRegions(11) = (6\|-\>3),\nvisitedRegions(12) = (7\|-\>3),visitedRegions(13) = (7\|-\>2),visitedRegions(14) = (7\|-\>3),\nvisitedRegions(15) = (6\|-\>3),visitedRegions(16) = (5\|-\>3),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>2),(5\|-\>3),(6\|-\>3),(7\|-\>2),(7\|-\>3)\},\nxRobot = 5,yRobot = 3"];
-
-32 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedRegions(7) = (3\|-\>1),visitedRegions(8) = (4\|-\>1),\nvisitedRegions(9) = (5\|-\>2),visitedRegions(10) = (5\|-\>3),visitedRegions(11) = (6\|-\>3),\nvisitedRegions(12) = (7\|-\>3),visitedRegions(13) = (7\|-\>2),visitedRegions(14) = (7\|-\>3),\nvisitedRegions(15) = (6\|-\>3),visitedRegions(16) = (5\|-\>3),visitedRegions(17) = (5\|-\>4),\nvisitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>2),(5\|-\>3),(6\|-\>3),(7\|-\>2),(7\|-\>3)\},xRobot = 5,yRobot = 4"];
-
-35 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedRegions(7) = (3\|-\>1),visitedRegions(8) = (4\|-\>1),\nvisitedRegions(9) = (5\|-\>2),visitedRegions(10) = (5\|-\>3),visitedRegions(11) = (6\|-\>3),\nvisitedRegions(12) = (7\|-\>3),visitedRegions(13) = (7\|-\>2),visitedRegions(14) = (7\|-\>3),\nvisitedRegions(15) = (6\|-\>3),visitedRegions(16) = (5\|-\>3),visitedRegions(17) = (5\|-\>4),\nvisitedRegions(18) = (5\|-\>5),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>2),(5\|-\>3),(5\|-\>4),(6\|-\>3),(7\|-\>2),(7\|-\>3)\},xRobot = 5,\nyRobot = 5"];
-
-40 [shape=box, color="#99BF38", fontsize=12, penwidth=2, label="status = No,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedRegions(7) = (3\|-\>1),visitedRegions(8) = (4\|-\>1),\nvisitedRegions(9) = (5\|-\>2),visitedRegions(10) = (5\|-\>3),visitedRegions(11) = (6\|-\>3),\nvisitedRegions(12) = (7\|-\>3),visitedRegions(13) = (7\|-\>2),visitedRegions(14) = (7\|-\>3),\nvisitedRegions(15) = (6\|-\>3),visitedRegions(16) = (5\|-\>3),visitedRegions(17) = (5\|-\>4),\nvisitedRegions(18) = (5\|-\>5),visitedRegions(19) = (1\|-\>4),visitedSquares = \{(1\|-\>1),(1\|-\>2),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>2),(5\|-\>3),(5\|-\>4),(5\|-\>5),(6\|-\>3),(7\|-\>2),(7\|-\>3)\},\nxRobot = 1,yRobot = 4"];
-
-41 [shape=doubleoctagon, color="#99BF38", fontsize=12, penwidth=2, label="status = Yes,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (1\|-\>1),visitedRegions(4) = (1\|-\>2),visitedRegions(5) = (2\|-\>2),\nvisitedRegions(6) = (3\|-\>2),visitedRegions(7) = (3\|-\>1),visitedRegions(8) = (4\|-\>1),\nvisitedRegions(9) = (5\|-\>2),visitedRegions(10) = (5\|-\>3),visitedRegions(11) = (6\|-\>3),\nvisitedRegions(12) = (7\|-\>3),visitedRegions(13) = (7\|-\>2),visitedRegions(14) = (7\|-\>3),\nvisitedRegions(15) = (6\|-\>3),visitedRegions(16) = (5\|-\>3),visitedRegions(17) = (5\|-\>4),\nvisitedRegions(18) = (5\|-\>5),visitedRegions(19) = (1\|-\>4),visitedRegions(20) = (1\|-\>5),\nvisitedSquares = \{(1\|-\>1),(1\|-\>2),(1\|-\>4),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>2),(5\|-\>3),(5\|-\>4),(5\|-\>5),(6\|-\>3),(7\|-\>2),(7\|-\>3)\},xRobot = 1,yRobot = 5"];
+27 [shape=doubleoctagon, color="#99BF38", fontsize=12, penwidth=2, label="status = Yes,visitedRegions(1) = (1\|-\>1),visitedRegions(2) = (1\|-\>2),\nvisitedRegions(3) = (2\|-\>2),visitedRegions(4) = (3\|-\>2),visitedRegions(5) = (3\|-\>1),\nvisitedRegions(6) = (4\|-\>1),visitedRegions(7) = (5\|-\>1),visitedRegions(8) = (5\|-\>2),\nvisitedRegions(9) = (5\|-\>3),visitedRegions(10) = (6\|-\>3),visitedRegions(11) = (7\|-\>3),\nvisitedRegions(12) = (6\|-\>3),visitedRegions(13) = (1\|-\>4),visitedRegions(14) = (1\|-\>5),\nvisitedSquares = \{(1\|-\>1),(1\|-\>2),(1\|-\>4),(2\|-\>2),(3\|-\>1),(3\|-\>2),(4\|-\>1),(5\|-\>1),(5\|-\>2),(5\|-\>3),(6\|-\>3),(7\|-\>3)\},xRobot = 1,yRobot = 5"];
 
 root [shape=invtriangle, color="#99BF38", fontsize=12, penwidth=2, label="root"];
 
@@ -50,49 +38,28 @@ root -> 0 [style = dotted, color = black, label="SETUP_CONSTANTS", fontsize=12];
 
 1 -> 2 [color = "#006391", label="MoveNorth--\>Moved_North", fontsize=12];
 
+2 -> 4 [color = "#006391", label="MoveEast--\>Moved_East", fontsize=12];
 
-2 -> 3 [color = "#006391", label="MoveSouth--\>Moved_South", fontsize=12];
+4 -> 5 [color = "#006391", label="MoveEast--\>Moved_East", fontsize=12];
 
+5 -> 7 [color = "#006391", label="MoveSouth--\>Moved_South", fontsize=12];
 
+7 -> 10 [color = "#006391", label="MoveEast--\>Moved_East", fontsize=12];
 
-3 -> 5 [color = "#006391", label="MoveNorth--\>Moved_North", fontsize=12];
+10 -> 11 [color = "#006391", label="MoveEast--\>Moved_East", fontsize=12];
 
+11 -> 13 [color = "#006391", label="MoveNorth--\>Moved_North", fontsize=12];
 
-5 -> 7 [color = "#006391", label="MoveEast--\>Moved_East", fontsize=12];
+13 -> 15 [color = "#006391", label="MoveNorth--\>Moved_North", fontsize=12];
 
-7 -> 8 [color = "#006391", label="MoveEast--\>Moved_East", fontsize=12];
+15 -> 19 [color = "#006391", label="MoveEast--\>Moved_East", fontsize=12];
 
+19 -> 20 [color = "#006391", label="MoveEast--\>Moved_East", fontsize=12];
 
-8 -> 10 [color = "#006391", label="MoveSouth--\>Moved_South", fontsize=12];
+20 -> 23 [color = "#006391", label="MoveWest--\>Moved_West", fontsize=12];
 
+23 -> 26 [color = "#006391", label="Teleport(1,4)--\>Teleported", fontsize=12];
 
-10 -> 13 [color = "#006391", label="MoveEast--\>Moved_East", fontsize=12];
-
-13 -> 16 [color = "#006391", label="Teleport(5,2)--\>Teleported", fontsize=12];
-
-
-16 -> 17 [color = "#006391", label="MoveNorth--\>Moved_North", fontsize=12];
-
-17 -> 21 [color = "#006391", label="MoveEast--\>Moved_East", fontsize=12];
-
-21 -> 22 [color = "#006391", label="MoveEast--\>Moved_East", fontsize=12];
-
-
-
-22 -> 24 [color = "#006391", label="MoveSouth--\>Moved_South", fontsize=12];
-
-24 -> 26 [color = "#006391", label="MoveNorth--\>Moved_North", fontsize=12];
-
-26 -> 29 [color = "#006391", label="MoveWest--\>Moved_West", fontsize=12];
-
-29 -> 31 [color = "#006391", label="MoveWest--\>Moved_West", fontsize=12];
-
-31 -> 32 [color = "#006391", label="MoveNorth--\>Moved_North", fontsize=12];
-
-32 -> 35 [color = "#006391", label="MoveNorth--\>Moved_North", fontsize=12];
-
-35 -> 40 [color = "#006391", label="Teleport(1,4)--\>Teleported", fontsize=12];
-
-40 -> 41 [color = "#006391", label="MoveNorth--\>Moved_North", fontsize=12];
+26 -> 27 [color = "#006391", label="MoveNorth--\>Moved_North", fontsize=12];
 
 }
